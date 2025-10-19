@@ -145,7 +145,7 @@ void ClientSession::Run()
 				BinaryData.insert(BinaryData.begin(), TargetHeader.begin(), TargetHeader.end());
 				UMClientSessions[Target]->SendToClient(BinaryData);
 				std::cout << "Sent message from " << UserID << " to " << Target << "\n";
-				std::cout << "Compromised server is peeking into sent data:\n" << BinaryData.data() << std::endl;//imitating someone intercepting and reading packets on the way
+				std::cout << "Compromised server is peeking into sent data:\n" << std::string(BinaryData.begin(), BinaryData.end()) << std::endl;//imitating someone intercepting and reading packets on the way
 			}
 			else
 			{
