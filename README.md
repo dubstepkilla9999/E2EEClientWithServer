@@ -1,5 +1,5 @@
 # E2EEClientWithServer
-Basic working example of a E2EE client with a server that they can communicate through.
+Basic working example of an E2EE client with a server that they can communicate through.
 
 It uses RSA encryption (from OpenSSL library) and TCP to send data. When you first log in as a certain nickname into the client app, it will create a pair of keys for you and store them as files. When you send a message to someone, it asks the receiver for their public key, and then stores it in a file, so this procedure is only needed once, even if you reopen the app. All communication between clients is performed by the server, which, however, does not implement any ecnryption/decryption code and only routes data to its receiver.
 
